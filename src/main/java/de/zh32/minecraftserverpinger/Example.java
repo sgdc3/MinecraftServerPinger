@@ -13,17 +13,17 @@ public class Example {
         } catch (SocketTimeoutException te) {
             System.out.println("Timeout!");
             return;
-        } catch(InvalidResponseException | IOException ioe) {
+        } catch (IOException | InvalidResponseException ioe) {
             ioe.printStackTrace();
             return;
         }
         System.out.println("Request: " + pinger.getHost().toString());
         System.out.println("--------------------------------");
         System.out.println("Motd: ");
-        System.out.println(response.getDescription());
+        System.out.println(response.getMotd());
         System.out.println();
-        System.out.println("Online players: " + response.getOnlinePlayers());
-        System.out.println("Max players: " + response.getMaxPlayers());
+        System.out.println("Online players: " + response.getPlayerOnline());
+        System.out.println("Max players: " + response.getPlayerMax());
         System.out.println();
     }
 }
